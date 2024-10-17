@@ -1,0 +1,42 @@
+<div *ngIf="isVisible" 
+     (click)="closeDialog()" 
+     [ngClass]="{'dialog-open': isVisible && !isClosing, 'dialog-close': isClosing}" 
+     class="dialog-overlay">
+  <div class="dialog-content" 
+       (click)="$event.stopPropagation()">
+    <div class="header">
+      <h2 class="title">Donate</h2>
+      <p class="subtitle">Donate to this dog.<br> Minimum $10. Maximum is $1,000,000.</p>
+    </div>
+    <div class="content">
+      <form [formGroup]="donateForm" (ngSubmit)="sendDonate()">
+        <div class="input-wrapper">
+          <img src="../../../assets/dollar.svg" 
+               class="icon"
+               alt="dollar">
+          <input class="amount" 
+                 type="number"
+                 min="10" 
+                 max="1000000" 
+                 formControlName="amount"
+                 placeholder="10">
+        </div>
+      </form>
+    </div>
+    <div class="buttons">
+      <button (click)="closeDialog()"
+              class="default">
+        Close
+      </button>
+      <button type="submit"
+              (click)="sendDonate()"
+              [disabled]="donateForm.invalid"
+              class="pay">
+        <span *ngIf="!busy">Send</span>
+        <div class="loader" *ngIf="busy">
+          <div class="spinner"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

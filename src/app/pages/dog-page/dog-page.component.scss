@@ -1,0 +1,240 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  animation: fadeIn 0.5s ease forwards;
+
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    animation: fadeIn 0.5s ease forwards;
+    transition: 0.25s ease;
+
+    @media (min-width: 800px) {
+      width: 100%;
+      max-width: 750px;
+      height: 90%;
+      border-radius: 24px;
+
+      .image {
+        border-radius: 24px;
+      }
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: 55%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 0px 0px 24px 24px;
+
+    .arrow-prew {
+      width: 24px;
+      height: 24px;
+      top: 16px;
+      left: 16px;
+      filter: invert(1);
+      position: absolute;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .like {
+      width: 26px;
+      height: 26px;
+      top: 16px;
+      right: 16px;
+      fill: white;
+      position: absolute;
+      transform: scale(1);
+      transition: 0.05s ease-in;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .like:active {
+      transform: scale(1.5);
+      transition: 0.05s ease-in;
+    }
+  }
+
+  .content {
+    width: 100%;
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+
+    .buttons {
+      gap: 16px;
+      margin-top: 24px;
+
+      .button {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 51px;
+        padding: 12px 10px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 8px;
+        border: none;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .donate {
+        width: 35%;
+        background-color: #EBEDEF;
+        transition: 0.1s ease-in-out;
+
+        &:active {
+          background-color: #d1d1d1;
+          transition: 0.1s ease-in-out;
+        }
+      }
+
+      .adopt {
+        flex-grow: 1;
+        color: white;
+        background-color: #FF1C7B;
+        transition: 0.1s ease-in-out;
+
+        &:active {
+          background-color: #ce1663;
+          transition: 0.1s ease-in-out;
+        }
+      }
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+
+        .title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 26px;
+          font-weight: 600;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .subtitle {
+          font-size: 16px;
+          color: rgba(6, 23, 44, 0.6);
+        }
+      }
+
+      .distance {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+
+        .icon {
+          width: 16px;
+          height: 16px;
+        }
+
+        .score {
+          font-size: 14px;
+          font-weight: 400;
+          margin: 0;
+        }
+      }
+
+      .attribute {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        padding: 9px 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #EBEDEF;
+        gap: 4px;
+
+        h3 {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .description {
+        width: 100%;
+        height: 100%;
+        max-height: 78px;
+        overflow: scroll; 
+        display: -webkit-box;
+        text-align: justify;
+        -webkit-box-orient: vertical;
+        
+        .text {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+h2, h3, p {
+  margin: 0;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="header">
+		<img style="height: 32px; width: 32px;" 
+				 src="../../../assets/logo.svg" 
+				 alt="logo">
+		<h2>FurEver Friends</h2>
+	</div>
+	<div class="filters">
+		<div class="input-wrapper">
+			<img src="../../../assets/search.svg" class="icon" alt="search">
+			<input class="search" type="text" placeholder="Search for a friend" [disabled]="busy">
+		</div>
+	</div>
+</div>
+<div *ngIf="busy" 
+		 class="loader-container">
+	<img src="../../../assets/like-fill.svg" 
+		 	 class="loader" 
+		 	 alt="loader">
+</div>
+<div class="scroll-container" 
+		 *ngIf="!busy">
+	<div *ngFor="let dog of dogs"
+			 class="card"
+			 (click)="openDogCard(dog)">
+		<div class="photo" 
+     		 [ngStyle]="{'background-image': 'url(' + dog.imageUrl + ')'}">
+		</div>
+		<div class="content">
+			<div class="description">
+				<div class="title">
+					<h2 class="name">{{ dog.name }}<img [src]="'../../../assets/' + (dog.gender === 'male' ? 'male.svg' : 'female.svg')" class="icon" alt="location"></h2>
+					<p class="breed">{{ dog.breed }}</p>
+				</div>
+				<div class="distance">
+					<img src="../../../assets/location.svg" class="icon" alt="location">
+					<p class="score">2,5 miles</p>
+				</div>
+			</div>
+			<div class="buttons">
+				<img [src]="'../../../assets/'+ (dog.liked ? 'like-fill.svg' : 'like-outline.svg')" 
+						 alt="not-liked" 
+						 (click)="changeLike($event, dog.id)"
+						 class="like">			
+			</div>
+		</div>
+	</div>
+</div>

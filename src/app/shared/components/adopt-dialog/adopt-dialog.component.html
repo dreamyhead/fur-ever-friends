@@ -1,0 +1,23 @@
+<div class="dialog-overlay" *ngIf="isVisible" (click)="closeDialog()" [ngClass]="{'dialog-open': isVisible && !isClosing, 'dialog-close': isClosing}">
+  <div class="dialog-content" (click)="$event.stopPropagation()">
+    <div class="header">
+      <h2 class="title">
+        Adopt
+      </h2>
+      <p class="subtitle">Adopt this dog</p>
+    </div>
+    <div class="content">
+      You can adopt this dog!
+      <br>
+      Call this number:
+      <br>
+      +7(999)-999-99-99
+    </div>
+    <div class="buttons">
+      <button (click)="closeDialog()"
+              class="default">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
