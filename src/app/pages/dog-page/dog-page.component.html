@@ -1,11 +1,11 @@
 <div class="main">
   <div class="image"
        [ngStyle]="{'background-image': 'url(' + currentDog.imageUrl + ')'}">
-    <img src="../../../assets/arrow-prew.svg" 
+    <img src="assets/arrow-prew.svg" 
          class="arrow-prew" 
          alt="arrow"
          (click)="returnToHome($event)">
-    <img [src]="'../../../assets/'+ (currentDog.liked ? 'like-fill.svg' : 'like-fill-white.svg')" 
+    <img [src]="'assets/'+ (currentDog.liked ? 'like-fill.svg' : 'like-fill-white.svg')" 
          class="like" 
          alt="like"       
          (click)="changeLike($event)">
@@ -15,14 +15,14 @@
       <div class="header">
         <h2 class="title">
           {{currentDog.name}}
-          <img [src]="'../../../assets/' + (currentDog.gender === 'male' ? 'male.svg' : 'female.svg')" 
+          <img [src]="'assets/' + (currentDog.gender === 'male' ? 'male.svg' : 'female.svg')" 
                class="icon" 
                alt="gender">
         </h2>
         <p class="subtitle">{{currentDog.breed}}</p>
       </div>
       <div class="distance">
-        <img src="../../../assets/location.svg" 
+        <img src="assets/location.svg" 
              class="icon"
              alt="location">
         <p class="score">2,5 miles</p>
@@ -52,12 +52,12 @@
       <button class="button donate"
               (click)="openDialog('donate')">
         Donate
-        <img src="../../../assets/donate.svg" class="icon" alt="donate">
+        <img src="assets/donate.svg" class="icon" alt="donate">
       </button>
       <button class="button adopt"
               (click)="openDialog('adopt')">
         Adopt
-        <img src="../../../assets/adopt.svg" class="icon" alt="adopt">
+        <img src="assets/adopt.svg" class="icon" alt="adopt">
       </button>
     </div>
   </div>

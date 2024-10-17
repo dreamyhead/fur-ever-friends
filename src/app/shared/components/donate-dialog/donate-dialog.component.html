@@ -11,13 +11,13 @@
     <div class="content">
       <form [formGroup]="donateForm" (ngSubmit)="sendDonate()">
         <div class="input-wrapper">
-          <img src="../../../assets/dollar.svg" 
+          <img src="assets/dollar.svg" 
                class="icon"
                alt="dollar">
           <input class="amount" 
                  type="number"
                  min="10" 
-                 max="1000000" 
+                 max="1000000"
                  formControlName="amount"
                  placeholder="10">
         </div>
