@@ -25,3 +25,9 @@ h2, h3, p {
   font-style: normal;
   box-sizing: border-box;
 }
+
+img, button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  outline: none;
+}
